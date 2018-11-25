@@ -1,0 +1,47 @@
+Userconf="/home/rmatonti/Proyecto/data/users"
+try=4
+
+while [ $try -gt 0 ]
+do
+	clear
+	tput cup 1 1
+	echo "Bienvenido"
+	tput cup 3 1
+	echo "Nombre de usuario: "
+	tput cup 5 1
+	echo "Contraseña: "
+	tput cup 3 20
+	read usr
+	tput cup 5 13
+	read psw
+
+	user=$(grep $usr $Userconf | cut -f1 -d:) 
+	pass=$(grep $usr $Userconf | cut -f2 -d:)
+
+	if [ -z $user ]
+	then
+		tput cup 7 1
+		echo "Usuario no existe"
+		try=$(expr $try - 1)
+		tput cup 9 1
+		echo "$try Intentos restantes"
+	else
+		tput cup 7 1
+		echo "Usuario existe"
+
+		if [ $pass = $psw ]
+		then
+			tput cup 9 1
+			echo "Contraseña correcta"
+			read
+			break
+		else
+			tput cup 9 1
+			echo "Contraseña incorrecta"
+			try=$(expr $try - 1)
+			tput cup 11 1
+			echo "$try Intentos restantes"
+			
+		fi
+	fi
+done
