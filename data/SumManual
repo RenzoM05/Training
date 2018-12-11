@@ -1,0 +1,57 @@
+Sum Manual
+
+In this file you will know how to use the sum functionality.
+
+*************************************************************************************************
+
+Syntax:
+
+with Sum you can Sum differents numbers or join letters and string together.
+
+sum [number1] [number2] [number3] ... [numberN]
+
+The result of this command will be a sum of all the numbers specificated
+
+sum 15 20 30
+
+result:
+
+60
+
+sum [string1] [string2] ... [stringN]
+
+This will show the convination of the strings that you specificated
+
+result: string1 string2 stringN
+
+sum [letter1] [letter2] [letter3]
+
+If you use letters in the sum it will join it like this:
+
+sum A B C D E
+
+result:
+
+ABCDE 
+
+************************************************************************************************
+
+Parameters:
+
+By default sum will join strings with space but using -d you can specificate a join character.
+
+
+-d ":"
+
+sum -d ":" A B C D
+
+result:
+
+A:B:C:D
+
+this parameter will not work with only numbers.
+
+
+sum --help This will show the Sum Manual.
+
+

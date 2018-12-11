@@ -1,4 +1,4 @@
-Userconf="/home/rmatonti/Proyecto/data/users"
+Userconf="/nobackup/mesarma/renzo/Training/data/users"
 try=4
 
 while [ $try -gt 0 ]
